@@ -1,0 +1,207 @@
+<Button>
+	markup: True
+
+<Difficulty>
+	FloatLayout:
+		size: root.width, root.height
+
+
+		Image:
+			size_hint: (0.5, 1)
+			source: 'pics/TaylorAcademy.jpg'
+			allow_stretch: True
+			keep_ratio: False
+		Button:
+			text: 'Progress'
+			bold: True
+			size_hint: (0.15,0.15)
+			pos_hint: {'x':0, 'y':0.85}
+			background_color: (1,0,0,0.8)
+			on_press: root.reset_progress()
+
+		BoxLayout:
+			pos_hint: {'x': 0.5, 'y': 0}
+			orientation: 'vertical'
+			size: (0.5,1)
+
+			Button:
+				text: 'Easy'
+				font_size: 32
+				size_hint: (0.5, 0.5)
+				on_press: root.diffi('easy')
+				on_press: root.manager.current = 'PianoClips'
+			
+
+			Button:
+				text: 'Medium'
+				font_size: 32
+				size_hint: (0.5, 0.5)
+				on_press: root.diffi('medium')
+				on_press: root.manager.current = 'PianoClips'
+			
+
+			Button:
+				text: 'Hard'
+				font_size: 32
+				size_hint: (0.5, 0.5)
+				on_press: root.diffi('hard')
+				on_press: root.manager.current = 'PianoClips'
+
+
+<Piano>
+	Image:
+		source: 'pics/pianodrop.jpg'
+		allow_stretch: True
+		keep_ratio: False
+
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+
+		BoxLayout:
+			orientation: "horizontal"
+			size: root.width, root.height
+
+			Button:
+				id: play_playagain
+				text: "Play"
+				background_color: (0,0,0,0.7)
+				color: (1,1,1,1)
+				on_press: root.pg_press()
+				size_hint: (1, 1)
+				font_size: 28
+
+			Button:
+				id: next_song
+				text: "Next Song"
+				background_color: (0,0,0,0.7)
+				color: (1,1,1,1)
+				on_press: root.ns_press()
+				size_hint: (1, 1)
+				font_size: 28
+				disabled: True
+
+		Label:
+			id: chords_expected
+			markup: True
+			text: "[b]What is the chord progression?"
+			outline_color: (0,0,0,1)
+			outline_width: 2
+			color: (1,1,1,1)
+			font_size: 28
+			size_hint: (1, 1)
+			halign: 'center'
+
+
+		GridLayout: 
+			cols: 2
+			rows: 1
+
+			TextInput:
+				id: chords_actual
+				multiline: False
+				size_hint: (1, 0.5)
+				font_size: 40
+				halign: 'center'
+
+			Button:
+				markup: True
+				text: "[b]<<"
+				font_size: 28
+				background_color: (1,0,0,0.8)
+				color: (1,1,1,1)
+				on_press: root.back_space()
+				size_hint: (0.3, 0.5)
+
+
+		GridLayout:
+			cols: 6
+			rows: 1
+
+			Button:
+				text: "1"
+				background_color: (0,0,0,0.7)
+				color: (1,1,1,1)
+				on_press: root.press(1)
+				font_size: 24
+			Button:
+				text: "2-"
+				background_color: (0,0,0,0.7)
+				color: (1,1,1,1)               
+				on_press: root.press('2-')
+				font_size: 24
+			Button:
+				text: "3-"
+				background_color: (0,0,0,0.7)
+				color: (1,1,1,1)               
+				on_press: root.press('3-')
+				font_size: 24
+			Button:
+				text: "4"
+				background_color: (0,0,0,0.7)
+				color: (1,1,1,1)              
+				on_press: root.press(4)
+				font_size: 24
+			Button:
+				text: "5"
+				background_color: (0,0,0,0.7)
+				color: (1,1,1,1)                
+				on_press: root.press(5)
+				font_size: 24
+			Button:
+				text: "6-"
+				background_color: (0,0,0,0.7)
+				color: (1,1,1,1)               
+				on_press: root.press('6-')
+				font_size: 24
+
+		Button:
+			id: submit_button
+			size_hint: (1, 0.5)
+			font_size: 32
+			text: "Submit"
+			background_color: (0,0,0,0.7)
+			color: (1,1,1,1)           
+			on_press: root.sub_press()
+			disabled: True
+
+		Button:
+			id: back_to_cat
+			size_hint: (1, 0.5)
+			font_size: 32
+			text: "Back to Difficulty"
+			on_press: root.back_to_cat()
+			on_press: root.manager.current = 'difficulty'
+			background_color: (0,0,0,0.7)
+			color: (1,1,1,1)
+
+
+<ResetWindow>
+	FloatLayout:
+		size: (400, 400)
+		pos_hint: {'x': 0, 'y': 0}
+		Button:
+			id: cur_prog
+			text: ""
+			bold: True
+			on_release: root.current_progress()
+			background_color: (1,0,0,0.3)
+			size_hint: (1,0.3)
+			pos_hint: {'x':0, 'y':0.55}
+
+		Label:
+			text: 'Would you like to reset your progress?'
+			size_hint: (1, 0.3)
+			pos_hint: {'x':0, 'y':0.3}
+
+		Button:
+			text: 'Yes'
+			on_press: root.resetting()
+			size_hint: (0.5, 0.3)
+			pos_hint: {'x':0, 'y':0}
+
+		Button:
+			text: 'No'
+			on_release: root.closing()
+			size_hint: (0.5, 0.3)
+			pos_hint: {'x':0.5, 'y':0}
