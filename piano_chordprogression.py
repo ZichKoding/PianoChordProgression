@@ -1,3 +1,5 @@
+'''GPL-3.0-or-later '''
+
 import os, sys
 import random
 import json
