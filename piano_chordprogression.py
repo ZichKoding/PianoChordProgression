@@ -1,4 +1,5 @@
-'''GPL-3.0-or-later '''
+'''GPL-3.0-or-later'''
+'''Developed by ZichKoding on 07/14/2021'''
 
 import os, sys
 import random
