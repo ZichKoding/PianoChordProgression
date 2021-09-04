@@ -1,0 +1,7 @@
+('c:\\users\\zichk\\desktop\\sublimepianoprogression\\kvenv\\share\\glew\\bin',
+ None,
+ [],
+ 'DATA',
+ [('glew32.dll',
+   'c:\\users\\zichk\\desktop\\sublimepianoprogression\\kvenv\\share\\glew\\bin\\glew32.dll',
+   'DATA')])
