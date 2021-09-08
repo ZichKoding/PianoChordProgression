@@ -7,10 +7,10 @@ __This app has only been ran and tested on Windows. If any bugs or issues arise 
 ### **Downloading procedure**
 **_Windows Only!!!_**
 Steps:
-* Once downloaded open the zip folder.
-* Extract the zip folder to the Desktop or desired location
-* Open the folder `PianoChordProgression` 
-* Click the `SublimePianoProgression`
-* Right click `Piano Chord Progression.lnk` and click copy. (If you don't see .lnk it's the only one that says _`Piano Chord Progression`_. This is also a shortcut link so it might say shortcut beside it.)
-* Paste the shortcut to the Desktop or desired location.
-* Wala! You are now able to use **_Piano Chord Progression_**
+* **Once downloaded open the zip folder.**
+* **Extract the zip folder to the Desktop or desired location**
+* **Open the folder `PianoChordProgression`**
+* **Click the `SublimePianoProgression`**
+* **Right click `Piano Chord Progression.lnk` and click copy.** *(If you don't see .lnk it's the only one that says _`Piano Chord Progression`_. This is also a shortcut link so it might say shortcut beside it.)*
+* **Paste the shortcut to the Desktop or desired location.**
+* __Wala! You are now able to use **_Piano Chord Progression_**__
